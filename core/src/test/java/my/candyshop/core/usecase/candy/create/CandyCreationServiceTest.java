@@ -64,6 +64,8 @@ public class CandyCreationServiceTest {
         Price price = new Price(new BigDecimal(2), new BigDecimal(1.5));
         when(candyPriceGateway.getCurrentPriceForCandy(eq(createRequest.getId()))).thenReturn(price);
 
+        candyCreationService.createNewCandy(createRequest);
+
         assertThat(priceLists.priceList.getCandies()).hasSize(1);
         Entry priceListEntry = priceLists.priceList.getCandies().get(0);
         assertThat(priceListEntry.getId()).isEqualTo(createRequest.getId());
