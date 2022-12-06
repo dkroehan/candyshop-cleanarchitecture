@@ -19,9 +19,9 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
-public class CandyCreationServiceTest {
+public class CreateCandyServiceTest {
 
-    private CandyCreationService candyCreationService;
+    private CreateCandyService createCandyService;
     private CandiesTestStub candies;
     private PriceListsTestStub priceLists;
     @Mock
@@ -31,7 +31,7 @@ public class CandyCreationServiceTest {
     public void setup() {
         candies = new CandiesTestStub();
         priceLists = new PriceListsTestStub();
-        candyCreationService = new CandyCreationService(candies, priceLists, candyPriceGateway);
+        createCandyService = new CreateCandyService(candies, priceLists, candyPriceGateway);
     }
 
     @Test
@@ -44,7 +44,7 @@ public class CandyCreationServiceTest {
         Price price = new Price(new BigDecimal(2), new BigDecimal(1.5));
         when(candyPriceGateway.getCurrentPriceForCandy(eq(createRequest.getId()))).thenReturn(price);
 
-        candyCreationService.createNewCandy(createRequest);
+        createCandyService.createNewCandy(createRequest);
 
         assertThat(candies.inserted).containsExactly(createRequest.getId());
         Candy candy = candies.store.get(createRequest.getId());
@@ -64,7 +64,7 @@ public class CandyCreationServiceTest {
         Price price = new Price(new BigDecimal(2), new BigDecimal(1.5));
         when(candyPriceGateway.getCurrentPriceForCandy(eq(createRequest.getId()))).thenReturn(price);
 
-        candyCreationService.createNewCandy(createRequest);
+        createCandyService.createNewCandy(createRequest);
 
         assertThat(priceLists.priceList.getCandies()).hasSize(1);
         Entry priceListEntry = priceLists.priceList.getCandies().get(0);

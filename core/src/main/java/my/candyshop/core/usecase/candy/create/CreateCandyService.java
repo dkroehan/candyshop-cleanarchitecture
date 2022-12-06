@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class CandyCreationService {
+public class CreateCandyService {
 
     private final Candies candies;
     private final PriceLists priceLists;

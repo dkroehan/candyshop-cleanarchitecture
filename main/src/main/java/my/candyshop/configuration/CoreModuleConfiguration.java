@@ -3,7 +3,7 @@ package my.candyshop.configuration;
 import my.candyshop.core.CoreConfiguration;
 import my.candyshop.core.domain.candy.Candies;
 import my.candyshop.core.domain.pricelist.PriceLists;
-import my.candyshop.core.usecase.candy.create.CandyCreationService;
+import my.candyshop.core.usecase.candy.create.CreateCandyService;
 import my.candyshop.core.usecase.candy.create.CandyPriceGateway;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -23,7 +23,7 @@ public class CoreModuleConfiguration {
     }
 
     @Bean
-    CandyCreationService createBean(Candies candies, PriceLists priceLists, CandyPriceGateway candyPriceGateway) {
-        return new CandyCreationService(candies, priceLists, candyPriceGateway);
+    CreateCandyService createBean(Candies candies, PriceLists priceLists, CandyPriceGateway candyPriceGateway) {
+        return new CreateCandyService(candies, priceLists, candyPriceGateway);
     }
 }

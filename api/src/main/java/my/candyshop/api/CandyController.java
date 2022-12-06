@@ -5,7 +5,7 @@ import my.candyshop.core.commons.Paged;
 import my.candyshop.core.domain.candy.Candy;
 import my.candyshop.core.domain.candy.SortBy;
 import my.candyshop.core.usecase.candy.browse.BrowseCandyService;
-import my.candyshop.core.usecase.candy.create.CandyCreationService;
+import my.candyshop.core.usecase.candy.create.CreateCandyService;
 import my.candyshop.core.usecase.candy.create.CreateRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,13 +21,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class CandyController {
 
     private final BrowseCandyService browseCandyService;
-    private final CandyCreationService candyCreationService;
+    private final CreateCandyService createCandyService;
     private final CandyMapper candyMapper;
 
     @PostMapping("/")
     public void createNewCandy(CreateRequestDto candyRequestDto) {
         CreateRequest createRequest = candyMapper.fromDto(candyRequestDto);
-        candyCreationService.createNewCandy(createRequest);
+        createCandyService.createNewCandy(createRequest);
     }
 
     @GetMapping(value = "/")

@@ -1,7 +1,6 @@
 package my.candyshop.api;
 
 import my.candyshop.core.commons.Paged;
-import my.candyshop.core.commons.mapping.CentralConfig;
 import my.candyshop.core.domain.candy.Candy;
 import my.candyshop.core.domain.candy.Ingredient;
 import my.candyshop.core.domain.candy.Nutrient;

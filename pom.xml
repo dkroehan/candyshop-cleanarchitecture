@@ -12,7 +12,7 @@
         <module>api</module>
         <module>database</module>
         <module>elasticsearch</module>
-        <module>aws</module>
+        <module>messaging</module>
         <module>external-apis</module>
         <module>jobs</module>
         <module>integration-tests</module>

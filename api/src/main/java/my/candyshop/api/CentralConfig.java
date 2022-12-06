@@ -1,11 +1,10 @@
-package my.candyshop.core.commons.mapping;
+package my.candyshop.api;
 
 import org.mapstruct.MapperConfig;
 import org.mapstruct.ReportingPolicy;
 
 
 @MapperConfig(
-        uses = CommonMapper.class,
         unmappedTargetPolicy = ReportingPolicy.ERROR,
         componentModel = "spring"
 )

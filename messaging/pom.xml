@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>aws</artifactId>
+    <artifactId>messaging</artifactId>
 
     <dependencies>
         <!-- module dependencies -->
